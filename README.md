@@ -18,7 +18,7 @@ to enable support for tvOS. It can be deployed on these platforms:
 First create a new connector project base on this template, named for example `THEODemoConnector`:
 
 ```
-$ npx react-native init THEODemoConnector --template react-native-theoplayer-connector-template
+$ npx react-native init THEODemoConnector --template @theoplayer/react-native-connector-template
 ```
 
 The dependencies will be installed as well.

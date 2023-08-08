@@ -1,5 +1,5 @@
 {
-  "name": "react-native-theoplayer-connector-template",
+  "name": "@theoplayer/react-native-connector-template",
   "version": "0.0.1",
   "description": "React Native template for a quick start with react-native-theoplayer connectors.",
   "scripts": {
