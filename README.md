@@ -2,12 +2,14 @@
 
 ### Overview
 
-This template provides boilerplate code for a [react-native-theoplayer](https://github.com/THEOplayer/react-native-theoplayer)
-connector.
+This template serves as a starting point for building a connector 
+using [react-native-theoplayer](https://github.com/THEOplayer/react-native-theoplayer).
 
-Additionally, an example app is generated that demonstrates how to use the connector.
-The example uses [react-native-tvos](https://github.com/react-native-tvos/react-native-tvos) 
-to enable support for tvOS. It can be deployed on these platforms:
+Included is a basic connector API that interfaces with native components on
+iOS, Android and web, designed for easy expansion.
+
+Moreover, the template generates a sample application that offers a practical demonstration of how to effectively utilize the connector.
+To enable compatibility with tvOS, the example employs react-native-tvos. The resulting application can be deployed across multiple platforms:
 
 - Android, AndroidTV & FireTV
 - iOS & tvOS
@@ -15,21 +17,33 @@ to enable support for tvOS. It can be deployed on these platforms:
 
 ### Usage
 
-First create a new connector project base on this template, named for example `THEODemoConnector`:
+To begin, initiate a new connector project using this template. Let's name it, for instance, `THEODemoConnector`:
 
 ```
 $ npx react-native init THEODemoConnector --template @theoplayer/react-native-connector-template
 ```
 
-The dependencies will be installed as well.
+This command will also handle the installation of the required dependencies.
 
 ### Running the Example App
 
-There is an example project included in the template to facilitate testing the connector.
+To test the connector, an illustrative project is provided within the template.
 
-```
+Navigate to the example directory:
+
+```bash
 $ cd THEODemoConnector/example
+```
+
+Install the necessary dependencies:
+
+```bash
 $ npm i
+```
+
+And run on either Web, Android or iOS:
+
+```bash
 $ npm run web
 $ npm run android
 $ (cd ios && pod install) && npm run ios
@@ -56,7 +70,7 @@ The `nativeHandle` is used to uniquely identify the player instance, as each pla
 connector instance.
 On the native iOS and Android side, the handle resolves to the corresponding player instance.
 
-On Android:
+#### On Android
 
 ```kotlin
 @ReactMethod
@@ -79,7 +93,7 @@ fun destroy(tag: Int) {
 }
 ```
 
-On iOS:
+#### On iOS
 
 ```swift
 @objc(initialize:config:)
@@ -107,3 +121,27 @@ func destroy(_ node: NSNumber) -> Void {
 ```
 
 The API can be extended with additional bridge methods.
+
+### React Hook
+
+For user convenience, a React hook is provided. This hook manages the destruction of the connector when either 
+the player is being destroyed or the connector itself is unmounted.
+
+```jsx
+import { useTHEODemoConnector } from 'THEODemoConnector';
+
+const config: THEODemoConnectorConfiguration = {
+  debug: true,
+};
+
+const App = () => {
+  const [connector, initConnector] = useTHEODemoConnector(config);
+
+  const onPlayerReady = (player: THEOplayer) => {
+    // Initialize connector
+    initConnector(player);
+  }
+
+  return (<THEOplayerView config={playerConfig} onPlayerReady={onPlayerReady}/>);
+}
+```

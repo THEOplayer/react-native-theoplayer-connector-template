@@ -12,4 +12,24 @@ npm install ReactNativeTHEOplayerConnector
 
 ### Configuring the connector
 
-TODO
+Create the connector by providing the `THEOplayer` instance and a config
+object:
+
+```jsx
+import { useReactNativeTHEOplayerConnector } from 'ReactNativeTHEOplayerConnector';
+
+const config: ReactNativeTHEOplayerConnectorConfiguration = {
+  debug: true,
+};
+
+const App = () => {
+  const [connector, initConnector] = useReactNativeTHEOplayerConnector(config);
+
+  const onPlayerReady = (player: THEOplayer) => {
+    // Initialize connector
+      initConnector(player);
+  }
+
+  return (<THEOplayerView config={playerConfig} onPlayerReady={onPlayerReady}/>);
+}
+```
