@@ -1,0 +1,29 @@
+{
+  "name": "react-native-theoplayer-connector-template",
+  "version": "0.0.1",
+  "description": "React Native template for a quick start with react-native-theoplayer connectors.",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/THEOplayer/react-native-theoplayer-connector-template.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-theoplayer",
+    "typescript",
+    "jest",
+    "template",
+    "boilerplate"
+  ],
+  "author": "Tom Van Laerhoven <tom.vanlaerhoven@theoplayer.com>",
+  "license": "MIT",
+  "bugs": {
+  },
+  "homepage": "https://github.com/THEOplayer/react-native-theoplayer-connector-template#readme"
+}
