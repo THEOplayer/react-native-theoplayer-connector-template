@@ -1,6 +1,6 @@
 {
   "name": "@theoplayer/react-native-connector-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React Native template for a quick start with react-native-theoplayer connectors.",
   "scripts": {
     "test": "exit 0"
@@ -23,8 +23,6 @@
   ],
   "author": "Tom Van Laerhoven <tom.vanlaerhoven@theoplayer.com>",
   "license": "MIT",
-  "bugs": {
-  },
+  "bugs": {},
   "homepage": "https://github.com/THEOplayer/react-native-theoplayer-connector-template#readme"
 }
-
